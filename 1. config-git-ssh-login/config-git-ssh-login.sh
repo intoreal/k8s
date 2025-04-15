@@ -20,8 +20,8 @@ if [ ! -f "$CONFIG_FILE" ]; then
 fi
 
 # 사용자로부터 키 입력 받기
-echo "Paste your private key (press Enter when done):"
-read -d '' -r key_content
+echo "Paste your private key (Press Ctrl+D when done):"
+key_content=$(cat)
 echo "$key_content" > "$KEY_FILE"
 chmod 600 "$KEY_FILE"
 
