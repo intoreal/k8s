@@ -13,7 +13,7 @@ echo
 read -p "📧 Docker 이메일: " DOCKER_EMAIL
 read -p "📛 사용할 시크릿 이름 (기본값: private-docker-registry-secret): " SECRET_NAME
 SECRET_NAME=${SECRET_NAME:-private-docker-registry-secret}
-
+echo ""
 
 # 시크릿 생성
 kubectl create secret docker-registry "$SECRET_NAME" \
@@ -25,6 +25,7 @@ kubectl create secret docker-registry "$SECRET_NAME" \
 
 # 현재 imagePullSecrets 리스트 가져오기
 EXISTING=$(kubectl get serviceaccount default -n "$NAMESPACE" -o json | jq -r '.imagePullSecrets[].name' 2>/dev/null)
+echo ""
 
 # 없으면 추가
 if ! echo "$EXISTING" | grep -q "^$SECRET_NAME$"; then
@@ -38,6 +39,7 @@ else
 fi
 
 # 결과 출력
+echo ""
 if [ $? -eq 0 ]; then
   echo "✅ 시크릿 생성 완료!"
   echo "🔐 시크릿 이름: $SECRET_NAME"
