@@ -47,4 +47,5 @@ chmod 600 "$KEY_FILE"
 chmod 600 "$CONFIG_FILE"
 [ -f "$KNOWN_HOSTS_FILE" ] && chmod 644 "$KNOWN_HOSTS_FILE"
 
+echo ""
 echo "SSH setup for github.com is complete."
