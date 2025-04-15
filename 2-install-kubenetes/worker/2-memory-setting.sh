@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🛠  Disabling swap..."
+echo "🛠  Disabling memory swap..."
 
 # 메모리 swap 비활성화
 free -h
