@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1  # cert-manager에서 사용하는 API 그룹 및 버전
+kind: ClusterIssuer  # 클러스터 전체에서 사용할 수 있는 인증서 발급자(ClusterIssuer) 정의
+metadata:
+  name: letsencrypt-cluster-issuer  # 이 ClusterIssuer의 이름 (Ingress에서 참조할 때 사용)
+spec:
+  acme:  # ACME 프로토콜을 사용하여 인증서를 발급받기 위한 설정
+    email: your-email@example.com  # 인증서 만료나 오류 관련 알림을 받을 이메일 주소 (반드시 유효해야 함)
+    server: https://acme-v02.api.letsencrypt.org/directory  # 실제 인증서 발급을 위한 Let's Encrypt ACME 서버 주소 (프로덕션 환경용)
+    privateKeySecretRef:
+      name: letsencrypt-key-secret  # ACME 계정의 개인 키를 저장할 Kubernetes Secret 이름 (cert-manager가 자동 생성)
+    solvers:  # 인증서 도메인 소유권을 검증하기 위한 방법 목록
+      - http01:  # HTTP-01 챌린지를 사용함 (도메인에 HTTP 요청을 보내서 인증하는 방식)
+          ingress:
+            class: nginx  # 이 HTTP 챌린지를 처리할 Ingress Controller의 클래스 이름 (예: nginx, ingress-nginx 등)
