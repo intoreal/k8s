@@ -51,3 +51,7 @@ chmod 600 "$CONFIG_FILE"
 
 echo ""
 echo "SSH setup for github.com is complete."
+echo ""
+echo "[COMMAND]"
+echo "git clone git@github.com:intoreal/k8s.git"
+echo ""
