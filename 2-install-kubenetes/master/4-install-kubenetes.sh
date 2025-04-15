@@ -30,7 +30,8 @@ if [ "$CURRENT_SHELL" = "zsh" ]; then
     else
         echo "ℹ️ alias k=kubectl already exists in ~/.zshrc"
     fi
-    echo "⚠️ Please restart your terminal or run 'source ~/.zshrc' to apply the alias."
+    
+    source ~/.zshrc
 else
     if ! grep -q "alias k=kubectl" ~/.bashrc; then
         echo "alias k=kubectl" >> ~/.bashrc
@@ -38,6 +39,7 @@ else
     else
         echo "ℹ️ alias k=kubectl already exists in ~/.bashrc"
     fi
-    echo "⚠️ Please restart your terminal or run 'source ~/.bashrc' to apply the alias."
+    
+    source ~/.bashrc
 fi
 
