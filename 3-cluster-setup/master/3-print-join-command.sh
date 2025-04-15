@@ -7,5 +7,5 @@ JOIN_COMMAND=$(sudo kubeadm token create --print-join-command)
 
 echo ""
 echo "sudo $JOIN_COMMAND"
-
+echo ""
 echo "🔑 Please run the join command on the worker nodes."
