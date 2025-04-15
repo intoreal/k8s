@@ -24,6 +24,8 @@ echo "Paste your private key (Press Ctrl+D when done):"
 key_content=$(cat)
 echo "$key_content" > "$KEY_FILE"
 chmod 600 "$KEY_FILE"
+echo ""
+echo ""
 
 # config 파일에 항목 추가 (기존에 동일 Host가 없을 경우)
 if ! grep -q "Host github.com" "$CONFIG_FILE"; then
