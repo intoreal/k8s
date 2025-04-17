@@ -21,7 +21,7 @@ if [ -z "$USER_EMAIL" ]; then
 fi
 
 # 📄 cluster-issuer YAML 파일
-ISSUER_FILE="8-cluster-issuer.yaml"
+ISSUER_FILE="ssl-cluster-issuer.yaml"
 TMP_FILE="tmp-cluster-issuer.yaml"
 
 # 📦 이메일 주소 교체

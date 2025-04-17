@@ -11,8 +11,8 @@ read -p "👤 Docker 사용자 이름: " DOCKER_USERNAME
 read -s -p "🔑 Docker 비밀번호: " DOCKER_PASSWORD
 echo
 read -p "📧 Docker 이메일: " DOCKER_EMAIL
-read -p "📛 사용할 시크릿 이름 (기본값: private-docker-registry-secret): " SECRET_NAME
-SECRET_NAME=${SECRET_NAME:-private-docker-registry-secret}
+read -p "📛 사용할 시크릿 이름 (기본값: private-docker-registry-login-secret): " SECRET_NAME
+SECRET_NAME=${SECRET_NAME:-private-docker-registry-login-secret}
 echo ""
 
 # 시크릿 생성

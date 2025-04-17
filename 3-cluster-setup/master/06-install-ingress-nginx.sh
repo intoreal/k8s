@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 🎯 원본 YAML 경로
-YAML_FILE="6-install-ingress-nginx-controller-baremetal.yaml"
+YAML_FILE="ingress-nginx-controller-baremetal.yaml"
 TMP_FILE="tmp-nginx-ingress.yaml"
 
 # 🌐 사용자 입력 받기
